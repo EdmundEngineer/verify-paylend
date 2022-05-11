@@ -17,7 +17,7 @@ function Verified() {
             <p>Your email is successfully verified</p>
           </h3>
           <div className="cta-wrapper flex justify-between items-center">
-          <a href="https://verifypaylend.netlify.app">
+          <a href="https://verifypaylend.netlify.app/verified">
                   <button 
                  
                   className='bg-primary rounded-md font-body p-2 text-xs font-semibold  text-white pl-7 pr-7'
