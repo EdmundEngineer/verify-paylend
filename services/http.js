@@ -1,10 +1,10 @@
 import axios from "axios";
-const makeHttpRequest = ({ url, json, method, headers, query, timeout, auth }) => {
+const makeHttpRequest = ({ url, data, method, headers,query, timeout, auth }) => {
     return  axios({
         url,
         method,
         auth,
-        data: json,
+        data: data,
         responseType: 'json',
         headers,
         params: query,
