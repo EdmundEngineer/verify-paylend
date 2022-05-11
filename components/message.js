@@ -19,8 +19,9 @@ const message = status == 200 ? <Verified/>: <Unverified/>
         responseType: 'json'
       })
        setStatus(response.status); console.log(response.status)
-       return response
        console.log(token)
+       return response
+      
      }
      verifyEmail()
 
