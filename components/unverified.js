@@ -1,14 +1,32 @@
-
+import axios from "axios";
+import ToastSuccess from './toast-success'
+import ToastFailed from './toast-failed'
+import { useEffect, useState } from 'react'
 function Unverified() {
-
+const [status,setStatus] = useState()
+const message = status == 200 ? <ToastSuccess/>: <ToastFailed/> 
+  const resendVerificatonLink = async () =>  {
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email'); 
+    const response = await  axios({
+     url:'https://api.paylend.africa/v2/auth/send-email-verify-link?client_secret=003723aa-b23b-4127-bad8-0e41ed051186',
+     method:'POST',
+     data: {
+      email
+  },
+     responseType: 'json'
+   })
+   setStatus(response.status); console.log(response.status); console.log(email)
+  }
   return (
     <>
 
 
       <div className='flex items-center flex-col justify-center min-h-screen bg-white sm:bg-gray-100'>
+      {message}
         <div className='px-8 py-6 mt-4 text-left bg-white sm:shadow-lg w-full sm:rounded sm:w-1/3'>
           <div className='mb-7 flex justify-center'>
-            <img src={"/assets/images/unverified.png"} alt='Logo' className='w-50 h-60' />
+         <img src={"/assets/images/unverified.png"} alt='Logo' className='w-50 h-60' />
               {/* <Image className='w-16 h-16'
                src={"/assets/images/verified.png"}
                width={"200px"}
@@ -25,8 +43,8 @@ function Unverified() {
 
                   <button 
                  
-                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold flex justify-center items-center  text-white pl-7 pr-7'
-             
+                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold flex content-center text-white pl-7 pr-7'
+                  onClick={resendVerificatonLink}
                 >
                 RESEND LINK
                 </button>

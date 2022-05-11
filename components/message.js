@@ -1,5 +1,7 @@
 import Verified from "./verified";
 import Unverified from "./unverified";
+import { useEffect, useState } from 'react'
+import axios from "axios";
 const Message = () => {
     const [status,setStatus] = useState()
 const message = status == 200 ? <Verified/>: <Unverified/>
