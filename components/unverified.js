@@ -43,7 +43,7 @@ const message = status == 200 ? <ToastSuccess/>: <ToastFailed/>
 
                   <button 
                  
-                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold flex content-center text-white pl-7 pr-7'
+                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold flex m-auto text-white pl-7 pr-7'
                   onClick={resendVerificatonLink}
                 >
                 RESEND LINK

@@ -13,25 +13,27 @@ function Verified() {
           <h3 className='text-xl mb-4 font-medium font-gotham-rounded-medium text-center text-secondary-900'>
             <p>Your email is successfully verified</p>
           </h3>
+          <div className="cta-wrapper flex justify-between items-center">
           <a href="https://verify.paylend.africa/email-verified">
                   <button 
                  
-                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold ml-8 text-white pl-7 pr-7'
+                  className='bg-primary rounded-md font-body p-2 text-xs font-semibold  text-white pl-7 pr-7'
              
                 >
                 OPEN IN APP
                 </button>
+                
                </a> 
                 <a href="https://dashboard.paylend.africa/login">
                 <button 
                  
-                 className='bg-secondary-900 rounded-md font-body p-2 text-xs font-semibold ml-8 text-white pl-7 pr-7 ml-20'
+                 className='bg-secondary-900 rounded-md font-body p-2 text-xs font-semibold text-white pl-7 pr-7 '
             
                >
                OPEN IN BROWSER
                </button>
                 </a>
-                
+                </div>
 
 
 
