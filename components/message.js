@@ -4,7 +4,6 @@ const Message = () => {
     const [status,setStatus] = useState()
 const message = status == 200 ? <Verified/>: <Unverified/>
  useEffect(() => {
-  window.addEventListener("load", function(){
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');  
      async function verifyEmail () {
@@ -20,12 +19,11 @@ const message = status == 200 ? <Verified/>: <Unverified/>
        return response
        console.log(token)
      }
-});
+     verifyEmail()
+
 }, [status]);
     return ( <div>
-        
-      <Verified />
-       <Unverified />
+     {message}
     </div> );
 }
  
