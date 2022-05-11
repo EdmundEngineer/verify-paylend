@@ -1,6 +1,7 @@
 import axios from "axios";
 import ToastSuccess from './toast-success'
 import ToastFailed from './toast-failed'
+import Zoom from 'react-reveal/Zoom';
 import { useEffect, useState } from 'react'
 function Unverified() {
 const [status,setStatus] = useState()
@@ -26,7 +27,8 @@ const message = status == 200 ? <ToastSuccess/>: <ToastFailed/>
       {message}
         <div className='px-8 py-6 mt-4 text-left bg-white sm:shadow-lg w-full sm:rounded sm:w-1/3'>
           <div className='mb-7 flex justify-center'>
-         <img src={"/assets/images/unverified.png"} alt='Logo' className='w-50 h-60' />
+          <Zoom>
+         <img src={"/assets/images/unverified.png"} alt='Logo' className='w-50 h-60' /></Zoom>
               {/* <Image className='w-16 h-16'
                src={"/assets/images/verified.png"}
                width={"200px"}
