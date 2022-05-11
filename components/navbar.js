@@ -8,8 +8,8 @@ const Navbar = () => {
         <Image
         src= {"/assets/images/logo.png"}
         alt= {"Paylend Logo"}
-        width={"100%"}
-        height={"34"}/>
+        width={"100px"}
+        height={"34px"}/>
     </a>
   
   </div>
