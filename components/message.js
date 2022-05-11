@@ -3,7 +3,8 @@ import Unverified from "./unverified";
 import { useEffect, useState } from 'react'
 import axios from "axios";
 const Message = () => {
-    const [status,setStatus] = useState()
+
+    const [status,setStatus] = useState(200)
 const message = status == 200 ? <Verified/>: <Unverified/>
  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
