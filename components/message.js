@@ -4,23 +4,32 @@ import { useEffect, useState } from 'react'
 import axios from "axios";
 const Message = () => {
 
-    const [status,setStatus] = useState(200)
+    const [status,setStatus] = useState()
 const message = status == 200 ? <Verified/>: <Unverified/>
  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');  
      async function verifyEmail () {
-       const response = await  axios({
-        url:'https://api.paylend.africa/v2/auth/verify-email?client_secret=003723aa-b23b-4127-bad8-0e41ed051186',
-        method:'POST',
-        data: {
-          token: token
-      },
-        responseType: 'json'
-      })
-       setStatus(response.status); console.log(response.status)
+       try{
+        const response = await  axios({
+          url:'https://api.paylend.africa/v2/auth/verify-email?client_secret=003723aa-b23b-4127-bad8-0e41ed051186',
+          method:'POST',
+          data: {
+            token: token
+        },
+          responseType: 'json'
+        })
+         setStatus(response.status);
+          console.log(response.status)
+         console.log(token)
+         return response
+       }
+       catch(err){
+        setStatus(err.response.status);
+        console.log(err.response.status)
        console.log(token)
-       return response
+       }
+   
       
      }
      verifyEmail()
