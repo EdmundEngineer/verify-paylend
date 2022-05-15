@@ -20,14 +20,10 @@ const message = status == 200 ? <Verified/>: <Unverified/>
           responseType: 'json'
         })
          setStatus(response.status);
-          console.log(response.status)
-         console.log(token)
          return response
        }
        catch(err){
         setStatus(err.response.status);
-        console.log(err.response.status)
-       console.log(token)
        }
    
       
