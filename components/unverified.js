@@ -10,7 +10,7 @@ const message = status == 200 ? <ToastSuccess/>: <ToastFailed/>
     const urlParams = new URLSearchParams(window.location.search);
     const email = urlParams.get('email'); 
     const response = await  axios({
-     url:'https://api.paylend.africa/v2/auth/send-email-verify-link?client_secret=003723aa-b23b-4127-bad8-0e41ed051186',
+     url:'https://api.paylend.africa/v2/auth/send-email-verify-link?client_secret= 6b249281-da05-4c3e-9c39-75a5a096ed82',
      method:'POST',
      data: {
       email

@@ -12,7 +12,7 @@ const message = status == 200 ? <Verified/>: <Unverified/>
      async function verifyEmail () {
        try{
         const response = await  axios({
-          url:'https://api.paylend.africa/v2/auth/verify-email?client_secret=6b249281-da05-4c3e-9c39-75a5a096ed82',
+          url:'https://api.paylend.africa/v2/auth/verify-email?client_secret= 6b249281-da05-4c3e-9c39-75a5a096ed82',
           method:'POST',
           data: {
             token: token
